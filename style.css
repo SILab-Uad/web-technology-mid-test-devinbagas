@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e0e7ff; /* Background color */
+    background-color: #e0e7ff; /* Background color */;
 }
 
 .container {
@@ -24,4 +24,65 @@ h1 {
     color: #4a4a4a; /* Header color */
 }
 
+h3{
+    font-size: 1.15em;
+    margin-bottom: 30px;
+}
+
+label{
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+input[type='number']{
+    margin-top:  10px;
+    width: 400px;
+    height: 30px;
+    border-style:none;
+}
+
+input[type='number']:hover{
+    border-style: solid;
+}
+
+#buttoncontainer{
+    display: flex;
+    width: 500px;
+    height: 50px;
+    position:relative;
+    gap:10px;
+    margin-bottom: 30px;
+}
+
+#passwordOutput{
+    font-weight: 700;
+}
 /* Add more styles here as needed */
+#generateBtn{
+    background-color:rgb(62, 62, 253);
+    color: white;
+    border-radius: 10px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+}
+
+#copyBtn{
+    background-color:rgb(55, 224, 78);
+    color: white;
+    border-radius: 10px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+}
+
+#generateBtn:hover{
+    background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+    scale: 105%;
+}
+
+#copyBtn:hover{
+    background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+    scale: 105%;
+}
