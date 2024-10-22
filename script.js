@@ -1,6 +1,6 @@
 // TODO: Implement the password generation logic based on user input
 
-const generatePassword = (length, options) => {
+export const generatePassword = (length, options) => {
     // Character sets for password generation
     const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -14,9 +14,8 @@ const generatePassword = (length, options) => {
     if (options.includeNumbers) PasswordVariable += numbers;
     if (options.includeSpecialChars) PasswordVariable += specialChars;
 
-    if (PasswordVariable === ''){
-        alert ('Dimohon Memilih Satu atau Lebih Kategori');
-        return '';
+    if (PasswordVariable === '') {
+        throw new Error('At least one character type must be selected.');
     }
 
     if (length < 8 || length > 128) {
@@ -34,24 +33,3 @@ const generatePassword = (length, options) => {
 };
 
 // TODO: Add event listener to the button to call generatePassword and display the output
-    document.getElementById('generateBtn').addEventListener('click',function() {
-    const length = parseInt(document.getElementById('length').value);
-
-    const options ={
-        includeUppercase: document.getElementById('includeUppercase').checked,
-        includeLowercase: document.getElementById('includeLowercase').checked,
-        includeNumbers: document.getElementById('includeNumbers').checked,
-        includeSpecialChars: document.getElementById('includeSpecialChars').checked
-    };
-    const password = generatePassword(length,options);
-    document.getElementById('passwordOutput').innerText=password;
-});
-// BONUS: Implement the copy to clipboard functionality
-document.getElementById('copyBtn').addEventListener('click',function() {
-    const password = document.getElementById('passwordOutput').innerText;
-    if (password) {
-        navigator.clipboard.writeText(password).then(() =>{
-            alert('Password Copied to Clipboard');
-        })
-    }
-});
